@@ -1,0 +1,58 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; background-color: rgb(49, 49, 49);
+    text-align: center;
+    color: white;
+  }
+  
+  header {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+  }
+  
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #ff4081; /* Change to your brand color */
+  }
+  
+  /* Footer Styles */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 30px;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 40px;
+  }
+  
+  footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: #ff4081; /* Same hover color as header links */
+  }
+  
+  footer .contact-info {
+    margin-bottom: 10px;
+  }
+  
