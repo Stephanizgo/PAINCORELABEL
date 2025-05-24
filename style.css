@@ -5,6 +5,10 @@ body {
     font-family: Arial, sans-serif; background-color: rgb(49, 49, 49);
     text-align: center;
     color: white;
+ background-image: url('image.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   }
   
   header {
