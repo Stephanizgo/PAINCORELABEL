@@ -4,41 +4,100 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home | PAINCORE</title>
-
-  <!-- CSS Libraries -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-  <!-- VanillaTilt -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-
-  <!-- Three.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r148/three.min.js"></script>
-
   <style>
-    canvas#bg {
-      position: fixed;
-      top: 0;
-      left: 0;
+    /* Responsive hero image */
+    .hero-image-container img.hero-image {
       width: 100%;
-      height: 100%;
-      z-index: -1;
+      max-width: 800px;
+      height: auto;
+      border-radius: 12px;
       display: block;
+      margin: 0 auto;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .hero-image-container img.hero-image:hover {
+      transform: scale(1.03);
+    }
+
+    /* Responsive typography and padding */
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .intro-section h1,
+    .intro-section h2 {
+      text-align: center;
+      margin: 0 10px 10px;
+    }
+
+    .welcome-section div {
+      max-width: 100%;
+      box-sizing: border-box;
+      padding: 25px 15px;
+      margin: 0 10px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Navigation responsiveness */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+    nav a {
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+    nav a.active, nav a:hover {
+      background-color: #6c2c91;
+      color: #fff;
+    }
+
+    /* Footer styling */
+    footer {
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* Small screen adjustments */
+    @media (max-width: 600px) {
+      .hero-image-container img.hero-image {
+        max-width: 100%;
+      }
+      main {
+        padding: 10px;
+      }
+      .welcome-section div {
+        padding: 20px 10px;
+        font-size: 1rem;
+      }
+      nav {
+        gap: 15px;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Background canvas -->
-  <canvas id="bg"></canvas>
 
-  <!-- Header -->
   <header>
     <div class="logo">
-      <img src="IMG-20250521-WA0029.jpg" alt="logo">
+      <img src="IMG-20250521-WA0029.jpg" alt="logo" />
     </div>
     <nav>
       <a href="index.html" class="active">Home</a>
@@ -50,37 +109,25 @@
 
   <main>
     <div class="hero-image-container">
-      <img src="IMG-20250521-WA0029.jpg" alt="PAINCORE" class="hero-image">
+      <img src="IMG-20250521-WA0029.jpg" alt="PAINCORE" class="hero-image" />
     </div>
 
     <section class="intro-section">
-      <h1 class="gsap-animate">We are #PAINCORE</h1>
-      <h2 class="gsap-animate">A new wave of musical expression</h2>
+      <h1 class="gsap-animate">Welcome to #PAINCORE</h1>
+      <h2 class="gsap-animate">Experience the sound of our collective</h2>
     </section>
 
-    <section class="artists-section">
-      <h2 class="gsap-animate">Featured Artists</h2>
-
-      <div class="artist-item gsap-animate tilt">
-        <h3>ШTEPHANIZGØ</h3>
-        <img src="photo_2025-05-22_20-33-10.jpg" alt="ШTEPHANIZGØ">
-      </div>
-
-      <div class="artist-item gsap-animate tilt">
-        <h3>ADËRAYA</h3>
-        <img src="photo_2025-05-22_20-36-10.jpg" alt="ADËRAYA">
-      </div>
-
-      <div class="artist-item gsap-animate tilt">
-        <h3>Cryztvl</h3>
-        <img src="photo_2025-05-22_20-33-20.jpg" alt="Cryztvl">
+    <section class="welcome-section">
+      <div class="gsap-animate" style="max-width: 800px; margin: 0 auto; background: rgba(0,0,0,0.7); border-radius: 8px; padding: 30px 20px;">
+        <p>PAINCORE is an artist collective made up of passionate creators from Czechia, Germany, and Poland. We blend unique styles and voices to create something fresh and exciting.</p>
+        <p>Discover our latest releases, connect with us on socials, or just explore our vibe here.</p>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="contact-info">
-      <a href="mailto:paincore13@gmail.com">paincore13@gmail.com</a> |
+      <a href="mailto:paincore13@gmail.com">paincore13@gmail.com</a> | 
       <a href="tel:+420775908268">+420 775 908 268</a>
     </div>
     <div class="copyright">
@@ -88,118 +135,38 @@
     </div>
   </footer>
 
-  <!-- Main Scripts -->
   <script>
-    // Set current year
     document.getElementById("year").textContent = new Date().getFullYear();
     gsap.registerPlugin(ScrollTrigger);
 
     document.addEventListener('DOMContentLoaded', () => {
-      // GSAP Setup
-      gsap.set('.gsap-animate', { opacity: 0, y: 40 });
-      gsap.set('.hero-image-container', { opacity: 0, scale: 0.95 });
+      gsap.set('.gsap-animate', { opacity: 0, y: 20 });
+      gsap.set('.hero-image-container', { opacity: 0, scale: 0.9 });
 
-      gsap.to('header', {
-        y: 0,
-        duration: 1.2,
-        ease: "elastic.out(1, 0.6)",
-        delay: 0.2
-      });
-
-      gsap.to('.hero-image-container', {
-        opacity: 1,
-        scale: 1,
-        duration: 1.5,
-        ease: "power4.out",
-        delay: 0.4
-      });
+      gsap.to('header', { y: 0, duration: 1, ease: "elastic.out(1, 0.5)" });
+      gsap.to('.hero-image-container', { opacity: 1, scale: 1, duration: 1.5, ease: "elastic.out(1, 0.5)" });
 
       gsap.to('.intro-section h1', {
-        opacity: 1, y: 0, duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: '.intro-section',
-          start: "top 80%",
-          toggleActions: "play none none reset"
-        }
+        opacity: 1, y: 0, duration: 0.8, ease: "back.out(1.7)",
+        scrollTrigger: { trigger: '.intro-section', start: "top 80%", toggleActions: "play none none reset" }
       });
 
       gsap.to('.intro-section h2', {
-        opacity: 1, y: 0, duration: 1, delay: 0.2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: '.intro-section',
-          start: "top 80%",
-          toggleActions: "play none none reset"
-        }
+        opacity: 1, y: 0, duration: 0.8, delay: 0.3, ease: "back.out(1.7)",
+        scrollTrigger: { trigger: '.intro-section', start: "top 80%", toggleActions: "play none none reset" }
       });
 
-      gsap.to('.artist-item', {
-        opacity: 1, y: 0, duration: 1,
-        stagger: { amount: 1 },
-        ease: "expo.out",
-        scrollTrigger: {
-          trigger: '.artists-section',
-          start: "top 80%",
-          toggleActions: "play none none reset"
-        }
+      gsap.to('.welcome-section div', {
+        opacity: 1, y: 0, duration: 0.8, delay: 0.6, ease: "back.out(1.7)",
+        scrollTrigger: { trigger: '.welcome-section', start: "top 80%", toggleActions: "play none none reset" }
       });
 
       gsap.to('footer', {
-        opacity: 1, y: 0, duration: 1.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: 'footer',
-          start: "top 90%",
-          once: true
-        }
+        opacity: 1, y: 0, duration: 1, ease: "power2.out",
+        scrollTrigger: { trigger: 'footer', start: "top 90%", once: true }
       });
-
-      // VanillaTilt
-      VanillaTilt.init(document.querySelectorAll(".tilt"), {
-        max: 15,
-        speed: 400,
-        glare: true,
-        "max-glare": 0.2
-      });
-    });
-
-    // THREE.js Background Effect
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bg'), alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.position.z = 5;
-
-    // Particles
-    const particles = new THREE.BufferGeometry();
-    const particleCount = 1000;
-    const positions = new Float32Array(particleCount * 3);
-
-    for (let i = 0; i < particleCount * 3; i++) {
-      positions[i] = (Math.random() - 0.5) * 20;
-    }
-
-    particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-    const material = new THREE.PointsMaterial({ color: 0xff4081, size: 0.1 });
-    const points = new THREE.Points(particles, material);
-    scene.add(points);
-
-    function animate() {
-      requestAnimationFrame(animate);
-      points.rotation.y += 0.001;
-      points.rotation.x += 0.0005;
-      renderer.render(scene, camera);
-    }
-
-    animate();
-
-    window.addEventListener('resize', () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
     });
   </script>
+
 </body>
 </html>
