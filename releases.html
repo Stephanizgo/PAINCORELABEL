@@ -5,188 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Releases | PAINCORE</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <!-- GSAP CDN -->
+  <link rel="stylesheet" href="styles.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <style>
-    /* Reset animation states */
-    .gsap-animate {
-      opacity: 0;
-    }
-    .hero-image-container {
-      opacity: 0;
-      scale: 0.9;
-    }
-    .release-item {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    .expect-section {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    
-    /* Body and background styles */
-    body {
-      margin: 0;
-      padding-top: 80px;
-      font-family: Arial, sans-serif;
-      color: white;
-      text-align: center;
-      background-color: rgb(49, 49, 49);
-      background-image: url('image.png');
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-      min-height: 100vh;
-    }
-    
-    /* Header styles */
-    header {
-      position: fixed;
-      top: 0;
+    /* Responsive images for releases */
+    .release-img-wrapper img {
       width: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      padding: 15px 0;
-      z-index: 1000;
-      transform: translateY(-100%);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    /* Hero image container */
-    .hero-image-container {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 0 20px;
-    }
-    
-    .hero-image {
-      width: 100%;
+      max-width: 400px;
       height: auto;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    }
-    
-    /* Content sections */
-    section {
-      margin-bottom: 50px;
-      padding: 30px 20px;
-      background-color: rgba(0, 0, 0, 0.7);
-      border-radius: 8px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    /* Content styles */
-    .logo img {
-      border-radius: 50%;
-      margin-left: 20px;
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-    }
-    
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-    
-    nav a:hover {
-      color: #ff4081;
-    }
-    
-    /* Release section styles */
-    .release-list {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .release-item {
-      margin-bottom: 30px;
-      background-color: rgba(30, 30, 30, 0.8);
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
       transition: transform 0.3s ease;
+      margin: 10px 0;
     }
-    
-    .release-item:hover {
-      transform: translateY(-5px);
+    .release-img-wrapper img:hover {
+      transform: scale(1.03);
     }
-    
-    .release-item img {
-      border-radius: 8px;
-      max-width: 100%;
-      margin-top: 15px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-    
-    /* Footer styles */
-    footer {
-      background: rgba(0, 0, 0, 0.8);
-      padding: 30px 0;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    
-    .contact-info a {
+
+    /* Make links standout */
+    .release-link {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 8px 15px;
+      background-color: #6c2c91;
       color: white;
-      margin: 0 10px;
+      border-radius: 6px;
       text-decoration: none;
-      transition: all 0.3s ease;
-      padding: 5px 10px;
-      border-radius: 4px;
+      transition: background-color 0.3s ease;
     }
-    
-    .contact-info a:hover {
-      color: #ff4081;
-      background-color: rgba(255, 255, 255, 0.1);
+    .release-link:hover {
+      background-color: #a54fc7;
     }
-    
-    /* Fix for h3 visibility */
-    .expect-section h3 {
-      min-height: 60px;
-      visibility: visible !important;
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        padding: 10px;
-      }
-      
-      nav {
-        margin-top: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      
-      .hero-image-container {
-        padding: 0 10px;
-      }
-      
-      section {
-        margin: 20px 10px;
-      }
-      
-      .release-item {
-        padding: 15px;
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .release-img-wrapper img {
+        max-width: 100%;
       }
     }
   </style>
 </head>
 <body>
-
   <header>
     <div class="logo">
       <img src="IMG-20250521-WA0029.jpg" alt="logo">
@@ -204,43 +64,32 @@
       <img src="IMG-20250521-WA0029.jpg" alt="PAINCORE" class="hero-image">
     </div>
     
-    <section class="intro-section">
-      <h1 class="gsap-animate">PAINCORE Releases</h1>
-      <h2 class="gsap-animate">Our latest tracks and albums</h2>
-    </section>
-    
     <section class="releases-section">
-      <ul class="release-list">
-          <li class="release-item gsap-animate">
-              ШTEPHANIZGØ, ADËRAYA & E7tery - FAST FASHION! <br>
-              Stream at <a href="https://too.fm/m0qjyoj">All platforms</a>
-          </li>
-          <div class="release-item gsap-animate">
-            <img src="ADERAYA e7tery.jpg" alt="Fast Fashion">
-          </div>
-          <li class="release-item gsap-animate">
-              ШTEPHANIZGØ, ADËRAYA & Cryztvl - CAN'T ESCAPE A PSYCHO <br>
-              Stream at <a href="https://t.me/Prod_STEPHANIZGO/442">Telegram (for now)</a>
-          </li>
-          <div class="release-item gsap-animate">
-            <img src="photo_2025-05-22_20-36-10.jpg" alt="E7tery">
-          </div>
-          <li class="release-item gsap-animate">
-              ШTEPHANIZGØ, Kin4t4 - BAD BIH!<br>
-              Stream at <a href="https://www.youtube.com/watch?v=jg-j83-cX0k">Youtube (for now)</a>
-          </li>
-          <div class="release-item gsap-animate">
-            <img src="14e38528b0b84dd0b8a5acfa77bee8cc.jpg" alt="BAD BIH!">
-          </div>
-      </ul>
-    </section>
-    
-    <section class="expect-section">
-      <h2 class="gsap-animate">Coming Soon</h2>
-      <h3 class="expect-text gsap-animate">
-        New tracks releasing summer 2025 <br>
-        Collaborative album in production
-      </h3>
+      <h1 class="gsap-animate">Our Releases</h1>
+      
+      <div class="release-item gsap-animate">
+        <h3>Shtephanizgo, Kin4t4 - Bad bih</h3>
+        <div class="release-img-wrapper">
+          <img src="14e38528b0b84dd0b8a5acfa77bee8cc.jpg" alt="Bad bih">
+          <a href="https://too.fm/stephanizgo-kinata-bad-bih" target="_blank" class="release-link">Listen Here</a>
+        </div>
+      </div>
+
+      <div class="release-item gsap-animate">
+        <h3>ШTEPHANIZGØ, aderaya, E7tery - Fast Fashion</h3>
+        <div class="release-img-wrapper">
+          <img src="ADERAYA e7tery.jpg" alt="Fast Fashion">
+          <a href="https://too.fm/m0qjyoj" target="_blank" class="release-link">Listen here</a>
+        </div>
+      </div>
+      
+      <div class="release-item gsap-animate">
+        <h3>Shtephanizgo, Aderaya, Cryztvl - LOVE ME!</h3>
+        <p>Coming soon</p>
+        <div class="release-img-wrapper">
+          <img src="photo_5917970446169523753_y.jpg" alt="Neon Dreams">
+        </div>
+      </div>
     </section>
   </main>
 
@@ -255,114 +104,29 @@
   </footer>
 
   <script>
-    // Automatically updates the year
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
-
-    // GSAP Animations
+    
     document.addEventListener('DOMContentLoaded', () => {
-      // Set initial states
       gsap.set('.gsap-animate', { opacity: 0, y: 20 });
       gsap.set('.hero-image-container', { opacity: 0, scale: 0.9 });
-      gsap.set('.expect-text', { opacity: 0, x: -20 });
       
-      // Header slide-down animation
-      gsap.to('header', {
-        y: 0,
-        duration: 1,
-        ease: "elastic.out(1, 0.5)"
+      gsap.to('header', { y: 0, duration: 1, ease: "elastic.out(1, 0.5)" });
+      gsap.to('.hero-image-container', { opacity: 1, scale: 1, duration: 1.5, ease: "elastic.out(1, 0.5)" });
+
+      gsap.to('.releases-section h1', {
+        opacity: 1, y: 0, duration: 0.8, ease: "back.out(1.7)",
+        scrollTrigger: { trigger: '.releases-section', start: "top 80%", toggleActions: "play none none reset" }
       });
 
-      // Hero image animation
-      gsap.to('.hero-image-container', {
-        opacity: 1,
-        scale: 1,
-        duration: 1.5,
-        ease: "elastic.out(1, 0.5)"
-      });
-
-      // Intro section animations
-      gsap.to('.intro-section h1', {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "back.out(1.7)",
-        scrollTrigger: {
-          trigger: '.intro-section',
-          start: "top 80%",
-          toggleActions: "play none none reset"
-        }
-      });
-
-      gsap.to('.intro-section h2', {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        delay: 0.3,
-        ease: "back.out(1.7)",
-        scrollTrigger: {
-          trigger: '.intro-section',
-          start: "top 80%",
-          toggleActions: "play none none reset"
-        }
-      });
-
-      // Releases list animation
       gsap.to('.release-item', {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        stagger: 0.3,
-        ease: "back.out(1.7)",
-        scrollTrigger: {
-          trigger: '.releases-section',
-          start: "top 80%",
-          toggleActions: "play none none reset"
-        }
+        opacity: 1, y: 0, duration: 0.8, stagger: 0.3, ease: "back.out(1.7)",
+        scrollTrigger: { trigger: '.releases-section', start: "top 80%", toggleActions: "play none none reset" }
       });
 
-      // Coming soon section
-      gsap.to('.expect-section h2', {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "back.out(1.7)",
-        scrollTrigger: {
-          trigger: '.expect-section',
-          start: "top 80%",
-          toggleActions: "play none none reset"
-        }
-      });
-
-      gsap.to('.expect-text', {
-        opacity: 1,
-        x: 0,
-        duration: 0.8,
-        delay: 0.5,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: '.expect-section',
-          start: "top 80%",
-          toggleActions: "play none none reset"
-        },
-        onComplete: function() {
-          gsap.set('.expect-text', { clearProps: "opacity,transform" });
-        }
-      });
-
-      // Footer animation
       gsap.to('footer', {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: 'footer',
-          start: "top 90%",
-          once: true
-        }
+        opacity: 1, y: 0, duration: 1, ease: "power2.out",
+        scrollTrigger: { trigger: 'footer', start: "top 90%", once: true }
       });
     });
   </script>
